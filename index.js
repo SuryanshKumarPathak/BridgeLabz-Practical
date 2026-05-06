@@ -1,10 +1,9 @@
-const express = require('express');
+// Problem Statement: Express Middleware + Route Protection
 
+const express = require('express');
 const app = express();
 function authMiddleware(req, res, next) {
-
     const authHeader = req.headers.authorization;
-
     if (authHeader === 'admin123') {
         next();
     } else {
